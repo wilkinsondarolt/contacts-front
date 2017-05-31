@@ -13,21 +13,19 @@
     <li><a href="precos.html">Preços</a></li>
     <li><a href="contato.html">Contato</a></li>
   </ul>
-  <div class="container">
-    <form id="contact" action="" method="post">
-      <form id="contact" action="" method="post">
-        <h3>Fale conosco</h3>
-        <h4>Deixe seu contato</h4>
-        <fieldset>
-          <input placeholder="Seu nome" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-          <input placeholder="Seu E-mail" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <button name="enviar" type="submit" id="contact-submit" data-submit="...enviando">Submit</button>
-        </fieldset>
-      </form>      
+  <div id="container" class="container">
+    <form id="contact" action="">
+      <h3>Fale conosco</h3>
+      <h4>Deixe seu contato</h4>
+      <fieldset>
+        <input id="nome" placeholder="Seu nome" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input id="email" placeholder="Seu E-mail" type="email" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <button type="submit">Enviar</button>
+      </fieldset>
     </form>
   </div>
   <script src="js/event-lib.js" charset="utf-8"></script>
