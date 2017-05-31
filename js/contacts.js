@@ -15,13 +15,18 @@
       "accessdate": dataAtual.toISOString()
     }
 
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://contact-track.herokuapp.com/pages.json", true);
-    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    xhr.send(JSON.stringify(data));
+    var appurl = "localhost:3000/pages.json";
+    new Request(appurl + '?'+ JSON.stringify(data), {
+            method:'post',
+            contentType:"application/json",
+            postBody:'key=' + value});
+    var request = new XMLHttpRequest();
+    request.open("POST", appurl, true);
+    request.setRequestHeader('Cache-Control', 'no-cache');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify(data));
   }
 
   setTrackingInfo();
-  window.onload = sendPageView;
+  addEvent(window, 'load', sendPageView);
 }());

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Home</title>
+  <title>Contato</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,9 +15,20 @@
   </ul>
   <div class="container">
     <form id="contact" action="" method="post">
-      <h3>Home</h3>
-      <h4>Bem-vindo a nossa página inicial</h4>
-    </form>  
+      <form id="contact" action="" method="post">
+        <h3>Fale conosco</h3>
+        <h4>Deixe seu contato</h4>
+        <fieldset>
+          <input placeholder="Seu nome" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Seu E-mail" type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+          <button name="enviar" type="submit" id="contact-submit" data-submit="...enviando">Submit</button>
+        </fieldset>
+      </form>      
+    </form>
   </div>
   <script src="js/event-lib.js" charset="utf-8"></script>
   <script src="js/hash.js" charset="utf-8"></script>
