@@ -15,14 +15,25 @@
       "accessdate": dataAtual.toISOString()
     }
 
-    var appurl = "localhost:3000/pages.json";
-    new Request(appurl + '?'+ JSON.stringify(data), {
-            method:'post',
-            contentType:"application/json",
-            postBody:'key=' + value});
-    var request = new XMLHttpRequest();
-    request.open("POST", appurl, true);
-    request.setRequestHeader('Cache-Control', 'no-cache');
+    function createCORSRequest(method, url) {
+      var xhr = new XMLHttpRequest();
+      if ("withCredentials" in xhr) {
+        // XHR for Chrome/Firefox/Opera/Safari.
+        xhr.open(method, url, true);
+      } else if (typeof XDomainRequest != "undefined") {
+        // XDomainRequest for IE.
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+      } else {
+        // CORS not supported.
+        xhr = null;
+      }
+      return xhr;
+    }
+
+    var appurl = 'http://localhost:3000/pages.json';
+    var request = createCORSRequest("POST", appurl);
+    request.withCredentials = true;
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify(data));
   }
